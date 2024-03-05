@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "stava-api-project",
+  "private_key_id": "2560c52aa8c9bcb9aa370ae0e37003ff5be99323",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDZY7RyHw3SPfrA\nxaL/51opRcplUhrmzjfnrTSfdDDdhhC0/0ZecNIL9U2PyvqSH1KgOw1owiim1kja\n09+4BghkM3XIJlLsG1tgKtukX0IsN/Mf8VoVBQv8hV7c58yus/m5eR/TyhLbfBJM\nPTAEgTwKA3a64W09B0JAMf+2DvpYeJFYt4SFJIfCNM6maEydKGvWUdPnWOz8wrR3\nr0cTrfH0JJLQkYMU+eyMhRCgEPyZO7PMS9ACTmsrhlNdbIjairRyopLAmggx8SoZ\nX0v3lGkr7Zc7jzzXJCvgGVgCPkSYk141F2hyFuZ5irlL2piII+oMKI2LpCfePy6I\nGKMtgDxtAgMBAAECggEAMorvMQpdzwgohQneZjOev5JRpqGCji+biWK4pasg0lxh\nhYeFj58ZAv0/UYOOowsjzYu1SCo+Q9319eTFctZ6PHvHcmfQp0MMCW2lgA/CxZ+j\niAV4HYN9IDLNFbzSFrtTACe0eewVWtD7uxyNzbpTYHuiLvyLBqGpql3Fl4lfdNJz\nu8sD7P4wFfIEhpaQFHZ7vZuQxGSwS70mhUiHkNe9byKu628xy8klqWbVBnraMOTx\nI1R8ObCU/IbBQCN6k0oxkn3xdnWrdOH1aTltuP7ziP0WHHBqA1fL2K1OhIWp/F4a\nHPEKR0uPrmPJGUa3NB5FEO+gYSqB58OiSf7krAPgCQKBgQDtFfjGRYxrANGLDxfE\nL7koxUTmbTTv5u9VUwe8pLC2GVE/uqxjw8al8KBTN/vt3ylI+4YJKVZBQ7k1pW2U\nXNI1+6ewQcQmDwIvYFvZjchvE2G2PKhI8b4dta5fQyhDQ0FmeQyRf5hAUkzmmJGF\nbsYEILetJ5pMJnuyrw94JH2wJQKBgQDqu3jvkUHlo0H7W56P4NW/mht7ykPU4+cQ\n/qiGsXtt6k46BVCU2CAV+UCP+LtgH4sLDuijQ7EwfERbJiBaCR4hHZyE1PaWd+fY\nvnOFy16V5nxpdfp0iEUksSZ984f9sgJrebWuL87nPazthI11fPaRvUbxyqgDPMnc\n8C4j0y7kqQKBgQDPKi3RgqAqN/Lh4fRQd6sBly6XcsGZB2AGXKEcE4Rd+k1mtIVC\nP6XrBhHx5a97sU5v+WirxLUcHkNOPxk7VMhSZ22ltDHjV6X/I+HefeewN21gQiyC\nYMpRR5nwn8wkyjXxhsCWurmdKs0LijFOOPdKUBRvd3V6KP5ZqmKIBsrVCQKBgQCo\ndtHtxedwYwII3xFmm2tsrrKI3npeQQ5l4Q6cVKaMFTv9YjEaEh69Bn0ylsYLz7ef\nwRxviDaT4KvCaxOO6rpH9BOQNbOf/ABWSyFn5bRFivzBR53voplVIxrIDE8OYYJh\nFiGxGLi6t0Xz1U0dBAmGQTy4bcS1RhxuR6YlqfweuQKBgHb549xIPmc27Xc7PFlX\nAqslY8G68wSWMHryb9UaQ8mwB5vIy6JM9TIYigc2VExZxpCJvCQD04ZSvwy8kC1n\nYgnkH76HzR0BfImP45Ig2DEr29HzbyLhHvoY6/wlaPMNxRcw7ihctUXr7y9A/rCf\nvV5Q2VxABOZPlXX+Kei8nMqI\n-----END PRIVATE KEY-----\n",
+  "client_email": "strava-api-project@stava-api-project.iam.gserviceaccount.com",
+  "client_id": "106649838408455082858",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/strava-api-project%40stava-api-project.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -49,8 +49,8 @@ function fetchAccessKey() {
   return new Promise(function(resolve, reject) {
     let refreshToken = getRefreshToken(); // Retrieve the refresh token from properties
     //console.log('refreshToken', refreshToken);
-    const clientId = '120519';
-    const clientSecret = '91fed4f20e0d2a00e260f7ab4fd9ce3f42cc045d';
+    const clientId = '';
+    const clientSecret = '';
     
     const response = UrlFetchApp.fetch('https://www.strava.com/oauth/token', {
       method: 'post',

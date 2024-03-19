@@ -1,3 +1,49 @@
+function deleteTriggers() {
+  const allTriggers = ScriptApp.getProjectTriggers();
+  for (let i = 0; i < allTriggers.length; i++) {
+    ScriptApp.deleteTrigger(allTriggers[i]);
+  }
+}
+function createFetchRecordButton() {
+  // Get the current spreadsheet
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = spreadsheet.getActiveSheet();
+  
+  // Add a button to the first row in column G (G1)
+  const cell = sheet.getRange('G1');
+  cell.setFontColor("Red"); 
+
+  // Add a comment with the placeholder 
+  cell.setComment('Click to Fetch New Record: Enter Y here');
+
+  cell.setValue('Click to Fetch New Record: ');
+  
+}
+
+
+function onClickFetchRecordButton(e) {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = spreadsheet.getActiveSheet();
+  const cell = sheet.getRange('G1');
+
+  const range = e.range;
+  const selectedCell = range.getA1Notation();
+  // Check if the selected cell is G1
+  if (selectedCell === 'G1' && e.value === 'Click to Fetch New Record: Y') {
+    const ui = SpreadsheetApp.getUi();
+    const response = ui.alert(
+      'Confirmation',
+      'Are you sure you want to fetch new records?',
+        ui.ButtonSet.YES_NO);
+    // Process the user's response
+    if (response == ui.Button.YES) {
+        main_program();
+    } 
+    cell.setValue('Click to Fetch New Record: ');
+  }
+}
+
+
 function setRefreshToken(refreshToken) {
   PropertiesService.getScriptProperties().setProperty('refreshToken', refreshToken);
 }
@@ -15,7 +61,7 @@ function getCurrentDate() {
   
   return formattedDate;
 }
-function getLastRecords(numOfRecord=10) {
+function getLastRecords(numOfRecord=30) {
   // Get the active sheet
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   // Get the total number of rows with data
@@ -25,7 +71,7 @@ function getLastRecords(numOfRecord=10) {
   // Calculate the range for the last 10 rows
   const startRow = Math.max(lastRow - numOfRecord + 1, startCount); // Ensure startRow is not negative
   //console.log(startRow);
-  const range = sheet.getRange(startRow, 1, numOfRecord, sheet.getLastColumn() - 1); // Adjust the last column as needed
+  const range = sheet.getRange(startRow, 1, numOfRecord, 5); // Adjust the last column as needed
   
   // Get the values of the last 10 rows
   const lastRecords = range.getValues();
@@ -50,7 +96,9 @@ function fetchAccessKey() {
     let refreshToken = getRefreshToken(); // Retrieve the refresh token from properties
     //console.log('refreshToken', refreshToken);
     const clientId = '';
+    // 46165
     const clientSecret = '';
+    
     
     const response = UrlFetchApp.fetch('https://www.strava.com/oauth/token', {
       method: 'post',
@@ -111,10 +159,10 @@ function writeToSheet(newData) {
 function main_program() {
   fetchData(20)
   .then(function(apiResult) {
-    const existingRecord = getLastRecords(20);
+    const existingRecord = getLastRecords(100);
     const newRecords = getNewRecords(existingRecord, apiResult);
     //console.log(apiResult);
-    //console.log(existingRecord);
+    console.log(existingRecord);
     //console.log(newRecords);
     newRecords.length && writeToSheet(newRecords);
   })
@@ -124,7 +172,14 @@ function main_program() {
 }
 
 function scheduleRunMain() {
-  // Create a time-driven trigger to run main function every 3 hours
+  // Assign a function to the button
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  ScriptApp.newTrigger('onClickFetchRecordButton')
+    .forSpreadsheet(spreadsheet)
+    .onEdit()
+    .create();
+
+  // Create a time-driven trigger to run main function every 4 hours
   ScriptApp.newTrigger('main_program')
     .timeBased()
     .everyHours(4)
